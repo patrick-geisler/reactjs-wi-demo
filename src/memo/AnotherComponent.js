@@ -1,7 +1,7 @@
 import React, { memo } from 'react'
 
 const AnotherComponent = () => {
-  console.log('AnotherComponent is re-rendering')
+  console.log('Memoized Component Rendered')
   return(
     <React.Fragment>
       This is AnotherComponent
@@ -9,10 +9,12 @@ const AnotherComponent = () => {
   )
 }
 
-const areEqual = (prevProps, nextProps) => {
-  // return true if component should not rerender
-  return true
-}
+// const areEqual = (prevProps, nextProps) => {
+//   // return true if component should not rerender
+//   return true
+// }
 
 // export default memo(AnotherComponent, areEqual)
-export default AnotherComponent
+
+
+export default memo(AnotherComponent)

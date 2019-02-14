@@ -3,7 +3,7 @@ import React from 'react'
 const Lazy = () => {
   return ( 
     <div  className='lazy'>
-      LAZY LOAD ME
+      Some Large Component
     </div>
   )
 }

@@ -21,12 +21,12 @@ class Lazy extends Component {
   render() {
     return (
       <Suspense fallback={<div />}>
-        {this.state.imageShowing && <LazyComponent />}
         <button onClick={
           this.state.imageShowing ? this.hideImage : this.showImage} 
           className='lazy'>
           Toggle Component
         </ button>
+        {this.state.imageShowing && <LazyComponent />}
       </Suspense>
     );
   }
