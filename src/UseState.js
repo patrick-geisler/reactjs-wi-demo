@@ -8,7 +8,7 @@ const Hooks = () => {
   }
 
   return(
-    <React.Fragment>
+    <div>
       <h1>
         {name}
       </h1>
@@ -16,7 +16,7 @@ const Hooks = () => {
         onChange={handleInput} 
         value={name}
       />
-    </React.Fragment>
+    </div>
   )
 }
 
