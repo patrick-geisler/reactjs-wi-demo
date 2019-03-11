@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 const Hooks = () => {
   const [name, setName] = useState('Hooks Rule')
 
-  function handleNameChange(e){
+  function handleInput(e){
     setName(e.target.value)
   }
 
@@ -13,7 +13,7 @@ const Hooks = () => {
         {name}
       </h1>
       <input 
-        onChange={handleNameChange} 
+        onChange={handleInput} 
         value={name}
       />
     </React.Fragment>
