@@ -1,23 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
 const Hooks = () => {
-  const [name, setName] = useState('Hooks Rule')
+  const [name, setName] = useState("Hooks Rule");
 
-  function handleInput(e){
-    setName(e.target.value)
-  }
+  const handleInput = e => {
+    setName(e.target.value);
+  };
 
-  return(
+  return (
     <div>
-      <h1>
-        {name}
-      </h1>
-      <input 
-        onChange={handleInput} 
-        value={name}
-      />
+      <h1>{name}</h1>
+      <input onChange={handleInput} value={name} />
     </div>
-  )
-}
+  );
+};
 
-export default Hooks
+export default Hooks;

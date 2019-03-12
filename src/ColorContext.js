@@ -1,6 +1,6 @@
-import React from 'react'
+import React from "react";
 
-export const MyContext = React.createContext({value: 'Blue'})
+export const MyContext = React.createContext({ value: "Blue" });
 
-export const ContextProvider = MyContext.Provider
-export const ContextConsumer = MyContext.Consumer
+export const ContextProvider = MyContext.Provider;
+export const ContextConsumer = MyContext.Consumer;

@@ -1,36 +1,24 @@
-import React, { Component } from 'react'
-import { MyContext } from './ColorContext'
+import React, { Component } from "react";
+import { MyContext } from "./ColorContext";
+import styled from "styled-components";
 
-// import { ContextConsumer } from './ColorContext'
-
-// const Color = () => {
-//   return(
-//     <ContextConsumer>
-//       {shoot => <p>{shoot}</p>}
-//     </ContextConsumer>
-//   )
-// }
+const H1 = styled.h1`
+  && {
+    flex: 0;
+    color: ${props => props.color};
+  }
+`;
 
 class Color extends Component {
-  static contextType = MyContext
-  componentDidMount(){
-    let value = this.context
-    console.log(value)
+  static contextType = MyContext;
+  componentDidMount() {
+    const value = this.context;
+    console.log(this.context);
   }
-  render(){
-    let value = this.context
-    return(
-      <p className='context'> { value } </p>
-    )
+  render() {
+    const value = this.context;
+    return <H1 color={value}>{value}</H1>;
   }
 }
 
-// class Color extends Component {
-//   render(){
-//     return(
-//       <p> {(context) => context.value } </p>
-//     )
-//   }
-// }
-
-export default Color
+export default Color;

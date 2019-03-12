@@ -1,11 +1,5 @@
-import React from 'react'
+import React from "react";
 
-const Lazy = () => {
-  return ( 
-    <div  className='lazy'>
-      Some Large Component
-    </div>
-  )
-}
+const Lazy = () => <div>Some Large Component</div>;
 
-export default Lazy
+export default Lazy;

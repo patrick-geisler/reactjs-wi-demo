@@ -1,50 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
+import styled from "styled-components";
 
-const useClientStatus = ((clientID) => {
-  const [isOnline, setIsOnline] = useState(false);
+const Status = styled.div`
+  font-size: 40px;
+  color: ${props => (props.clicked ? "#2ecc71" : "#e74c3c")};
+`;
 
-  function handleStatusChange(status) {
-    setIsOnline(status.isOnline);
-  }
-
-  // useEffect(() => {
-  //   Client.subscribeToClientStatus(clientID, handleStatusChange);
-  //   return () => {
-  //     Client.unsubscribeFromClientStatus(clientID, handleStatusChange);
-  //   };
-  // });
-
-  if (isOnline === null) {
-    return 'Loading...';
-  }
-  return isOnline ? 'Online' : 'Offline';
-
+const ClientStatus = props => {
+  const [clicked, setClicked] = useState(false);
+  useEffect(() => {
+    window.addEventListener("keydown", () => setClicked(true));
+    return window.addEventListener("keyup", () => setClicked(false));
   });
+  return (
+    <Status clicked={clicked}>{clicked ? "Pressed" : "Not Pressed"}</Status>
+  );
+};
 
-
-
-const ClientStatus = () => {
-	const clientStatus = useClientStatus('1111')
-
-  const clientStatusColor = () => {
-    if(clientStatus === 'Online'){
-      return 'Green'
-    } else {
-      return 'Red'
-    }
-  }
-
-		return(
-		<div>
-			{/* <StatusIcon fill={clientStatusColor(clientStatus)} /> */}
-      <h1>Client Status:</h1>
-      <br/>
-
-      {clientStatus}
-		</div>
-		)
-	
-}
-
-
-export default ClientStatus
+export default ClientStatus;
